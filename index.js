@@ -10,9 +10,15 @@ var tar = require('tar-stream')
 var directories = {}
 var files = {}
 
+var sort = function(a, b) {
+  return (a.type+'/'+a.name).localeCompare(b.type+'/'+b.name)
+}
+
 drop(document.body, function(files) {
   document.getElementById('text').style.display = 'none'
   document.getElementById('spinner').style.display = 'block'
+
+  document.title = 'Processing...'
 
   reader(files[0])
     .pipe(gunzip())
@@ -55,8 +61,10 @@ drop(document.body, function(files) {
 
         if (cwd !== '/') cwd = cwd.replace(/\/$/, '')
 
+        document.title = cwd
+
         if (hash[0] === 'f') br.file(cwd, files[cwd] || '(file cannot be displayed)')
-        else br.directory(cwd, directories[cwd] || [])
+        else br.directory(cwd, (directories[cwd] || []).sort(sort))
       }
 
       window.onhashchange()
