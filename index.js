@@ -1,4 +1,5 @@
 var Stream = require('stream') // haxx to fix browserify+readable-stream
+var gunzip = require('gunzip-maybe')
 var path = require('path')
 var browser = require('file-browser-widget')
 var drop = require('drag-and-drop-files')
@@ -11,6 +12,7 @@ var files = {}
 
 drop(document.body, function(files) {
   reader(files[0])
+    .pipe(gunzip())
     .pipe(tar.extract())
     .on('entry', function(entry, stream, next) {
       var name = path.join('/', entry.name)
@@ -54,6 +56,6 @@ drop(document.body, function(files) {
         else br.directory(cwd, directories[cwd] || [])
       }
 
-      window.location = '#d/'
+      window.onhashchange()
     })
 })

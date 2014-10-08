@@ -7,6 +7,7 @@
     "drag-and-drop-files": "0.0.1",
     "file-browser-widget": "^1.0.4",
     "filereader-stream": "^0.1.1",
+    "gunzip-maybe": "^1.0.3",
     "tar-stream": "^1.0.0"
   },
   "devDependencies": {
