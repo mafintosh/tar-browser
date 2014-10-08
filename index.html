@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tar browser</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #browser {
+      padding: 20px;
+    }
+
+    #drop {
+      color: #ccc;
+      font-size: 50px;
+      font-weight: bold;
+      font-family: 'Helvetica Neue', 'Lucida Grande', Arial;
+      padding: 80px;
+      border: 5px dashed #ccc;
+      text-align: center;
+      margin: 50px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    #drop-text {
+      margin-top: 10%;
+    }
+  </style>
+</head>
+<body>
+  <div id="browser">
+    <div id="drop">
+      <div id="drop-text">DRAG AND DROP TARBALL HERE</div>
+    </div>
+  </div>
+  <script src="bundle.js"></script>
+</body>
+</html>

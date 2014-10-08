@@ -1,0 +1,30 @@
+{
+  "name": "tar-browser",
+  "version": "0.0.0",
+  "description": "demo of file-browser-widget + tar-stream",
+  "main": "index.js",
+  "dependencies": {
+    "drag-and-drop-files": "0.0.1",
+    "file-browser-widget": "^1.0.4",
+    "filereader-stream": "^0.1.1",
+    "tar-stream": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^6.0.3",
+    "watchify": "^2.0.0"
+  },
+  "scripts": {
+    "build": "browserify index.js > bundle.js",
+    "watch": "watchify index.js -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/tar-browser.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/tar-browser/issues"
+  },
+  "homepage": "https://github.com/mafintosh/tar-browser"
+}
