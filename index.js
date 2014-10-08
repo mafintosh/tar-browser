@@ -11,6 +11,9 @@ var directories = {}
 var files = {}
 
 drop(document.body, function(files) {
+  document.getElementById('text').style.display = 'none'
+  document.getElementById('spinner').style.display = 'block'
+
   reader(files[0])
     .pipe(gunzip())
     .pipe(tar.extract())

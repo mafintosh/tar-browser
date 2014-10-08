@@ -33,12 +33,19 @@
     #drop-text {
       margin-top: 10%;
     }
+
+    #spinner {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <div id="browser">
     <div id="drop">
-      <div id="drop-text">DRAG AND DROP TARBALL HERE</div>
+      <div id="drop-text">
+        <span id="text" >DRAG AND DROP TARBALL HERE</span>
+        <center id="spinner"><img src="spinner.gif"></center>
+      </div>
     </div>
   </div>
   <script src="bundle.js"></script>
