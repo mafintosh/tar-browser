@@ -56,9 +56,9 @@ drop(document.body, function(files) {
       br.appendTo('#browser')
 
       window.onhashchange = function() {
-        var hash = location.hash.slice(1)
-        var type = hash[1] === 'f' ? 'file' : 'directory'
-        var cwd = hash.slice(2) || '/'
+        var hash = location.hash.slice(2)
+        var type = hash[0] === 'f' ? 'file' : 'directory'
+        var cwd = hash.slice(1) || '/'
 
         if (cwd !== '/') cwd = cwd.replace(/\/$/, '')
 
