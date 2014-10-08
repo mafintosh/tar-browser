@@ -46,19 +46,19 @@ drop(document.body, function(files) {
       var br = browser()
 
       br.on('directory', function(cwd) {
-        window.location = '#d'+path.join('/', cwd)
+        window.location = '#/d'+path.join('/', cwd)
       })
 
       br.on('file', function(cwd) {
-        window.location = '#f'+path.join('/', cwd)
+        window.location = '#/f'+path.join('/', cwd)
       })
 
       br.appendTo('#browser')
 
       window.onhashchange = function() {
         var hash = location.hash.slice(1)
-        var type = hash[0] === 'f' ? 'file' : 'directory'
-        var cwd = hash.slice(1) || '/'
+        var type = hash[1] === 'f' ? 'file' : 'directory'
+        var cwd = hash.slice(2) || '/'
 
         if (cwd !== '/') cwd = cwd.replace(/\/$/, '')
 
