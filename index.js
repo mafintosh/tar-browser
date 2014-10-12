@@ -14,13 +14,13 @@ var sort = function(a, b) {
   return (a.type+'/'+a.name).localeCompare(b.type+'/'+b.name)
 }
 
-drop(document.body, function(files) {
+drop(document.body, function(dropped) {
   document.getElementById('text').style.display = 'none'
   document.getElementById('spinner').style.display = 'block'
 
   document.title = 'Processing...'
 
-  reader(files[0])
+  reader(dropped[0])
     .pipe(gunzip())
     .pipe(tar.extract())
     .on('entry', function(entry, stream, next) {
